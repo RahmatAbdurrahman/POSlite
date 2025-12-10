@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { User, Mail, Lock, ArrowRight } from 'lucide-react'
 import Input from '../../components/common/Input'
 import Button from '../../components/common/Button'
-import Alert from '../../components/common/alert'
+import Alert from '../../components/common/Alert'
 import ThemeToggle from '../../components/common/ThemeToggle'
 import { useAuthStore } from '../../store/authStore'
 

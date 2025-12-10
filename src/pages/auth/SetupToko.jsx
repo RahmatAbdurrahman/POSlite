@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Store, ArrowRight, Sparkles } from 'lucide-react'
 import Input from '../../components/common/Input'
 import Button from '../../components/common/Button'
-import Alert from '../../components/common/alert'
+import Alert from '../../components/common/Alert'
 import { useAuthStore } from '../../store/authStore'
 
 const SetupToko = () => {
