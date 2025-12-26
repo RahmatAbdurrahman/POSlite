@@ -5,12 +5,15 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        // Neo-Warung Theme Colors
+        border: "#e5e5e5",
+        input: "#e5e5e5", 
+        ring: "#22C55E",
         background: {
           light: "#F9FAFB",
           dark: "#111827",
