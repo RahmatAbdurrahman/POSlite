@@ -1,0 +1,10 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "deno.enable": true,
+  "deno.enablePaths": [
+    "lib/supabase/functions",
+    "supabase/functions"
+  ],
+  "deno.unstable": true,
+  "deno.importMap": "./supabase/functions/import_map.json"
+}
