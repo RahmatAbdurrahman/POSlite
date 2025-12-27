@@ -76,14 +76,14 @@ export default function HomePage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
               <Link
-                href="/register"
+                href="/auth/register"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-500 text-white font-semibold rounded-neo shadow-neo-lg hover:bg-primary-600 hover:shadow-neo-xl transition-all duration-200"
               >
                 Mulai Gratis
                 <ArrowRight size={20} />
               </Link>
               <Link
-                href="/login"
+                href="/auth/login"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white font-semibold rounded-neo shadow-neo-md hover:shadow-neo-lg transition-all duration-200 border-2 border-neutral-200 dark:border-neutral-700"
               >
                 Masuk
