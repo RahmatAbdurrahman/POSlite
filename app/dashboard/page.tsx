@@ -10,14 +10,18 @@ import {
   AlertTriangle,
   Package,
   ArrowUp,
-  ArrowDown
+  ArrowDown,
+  BarChart3
 } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils'
 import dynamic from 'next/dynamic'
 import toast from 'react-hot-toast'
 
 // Dynamic import untuk ApexCharts (client-side only)
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
+const Chart = dynamic(() => import('react-apexcharts'), { 
+  ssr: false,
+  loading: () => <div className="h-[300px] flex items-center justify-center text-neutral-400">Loading chart...</div>
+})
 
 interface DashboardStats {
   today_revenue: number
@@ -135,15 +139,13 @@ export default function DashboardPage() {
         : 0
 
       // Get low stock products
-      const { data: allProducts } = await supabase
+      const { data: lowStock } = await supabase
         .from('products')
         .select('id, name, stock, stock_alert_level')
         .eq('user_id', user.id)
+        .lte('stock', 'stock_alert_level')
         .order('stock', { ascending: true })
-
-      const lowStock = allProducts
-        ?.filter(p => p.stock <= p.stock_alert_level)
-        .slice(0, 5) || []
+        .limit(5)
 
       // Get total products
       const { count: totalProducts } = await supabase
@@ -336,13 +338,19 @@ export default function DashboardPage() {
             <CardTitle>Grafik Pendapatan 7 Hari Terakhir</CardTitle>
           </CardHeader>
           <CardContent>
-            {chartData && (
+            {chartData ? (
               <Chart
                 options={chartData.options}
                 series={chartData.series}
                 type="area"
                 height={300}
               />
+            ) : (
+              <div className="h-[300px] flex flex-col items-center justify-center text-neutral-400">
+                <BarChart3 className="w-16 h-16 mb-4 opacity-50" />
+                <p>Belum ada data transaksi</p>
+                <p className="text-sm mt-2">Mulai dengan transaksi pertama Anda</p>
+              </div>
             )}
           </CardContent>
         </Card>
