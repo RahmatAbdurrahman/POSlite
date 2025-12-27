@@ -221,7 +221,7 @@ export default function RegisterPage() {
           <p className="text-center text-sm text-neutral-600 dark:text-neutral-400">
             Sudah punya akun?{' '}
             <Link
-              href="/login"
+              href="/auth/login"
               className="text-primary-500 hover:text-primary-600 font-semibold"
             >
               Masuk di sini
