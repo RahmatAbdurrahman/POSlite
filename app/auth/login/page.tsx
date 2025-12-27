@@ -41,7 +41,7 @@ export default function LoginPage() {
       }
 
       toast.success('Login berhasil! Selamat datang kembali 🎉')
-      router.push('/dashboard')
+      router.push('/dashboard/dashboard')
       router.refresh()
     } catch (error: any) {
       console.error('Login error:', error)
