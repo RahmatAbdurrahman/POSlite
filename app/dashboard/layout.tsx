@@ -23,11 +23,11 @@ import toast from 'react-hot-toast'
 import { cn } from '@/lib/utils'
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
-  { name: 'Kasir', href: '/kasir', icon: ShoppingCart },
-  { name: 'Inventaris', href: '/inventaris', icon: Package },
-  { name: 'Laporan', href: '/laporan', icon: FileText },
-  { name: 'Pengaturan', href: '/pengaturan', icon: Settings },
+  { name: 'Dashboard', href: '/dashboard/dashboard', icon: LayoutDashboard },
+  { name: 'Kasir', href: '/dashboard/kasir', icon: ShoppingCart },
+  { name: 'Inventaris', href: '/dashboard/inventaris', icon: Package },
+  { name: 'Laporan', href: '/dashboard/laporan', icon: FileText },
+  { name: 'Pengaturan', href: '/dashboard/pengaturan', icon: Settings },
 ]
 
 export default function DashboardLayout({
@@ -87,7 +87,7 @@ export default function DashboardLayout({
       const supabase = createClient()
       await supabase.auth.signOut()
       toast.success('Logout berhasil!')
-      router.push('/login')
+      router.push('/auth/login')
       router.refresh()
     } catch (error) {
       toast.error('Gagal logout')
