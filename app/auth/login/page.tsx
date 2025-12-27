@@ -148,7 +148,7 @@ export default function LoginPage() {
           <p className="text-center text-sm text-neutral-600 dark:text-neutral-400">
             Belum punya akun?{' '}
             <Link
-              href="/register"
+              href="/auth/register"
               className="text-primary-500 hover:text-primary-600 font-semibold"
             >
               Daftar sekarang

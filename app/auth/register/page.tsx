@@ -76,7 +76,7 @@ export default function RegisterPage() {
         
         // Redirect ke login setelah 2 detik
         setTimeout(() => {
-          router.push('/login')
+          router.push('/auth/login')
         }, 2000)
       }
     } catch (error: any) {
